@@ -1,0 +1,48 @@
+import java.io.*;
+import java.util.*;
+import java.text.*;
+import java.math.*;
+import java.util.regex.*;
+
+public class Solution{
+   public static void main(String[] args){
+      
+      Scanner in = new Scanner(System.in);
+   //   int testCases = Integer.parseInt(in.nextLine());
+   //   while(testCases>0){
+         String line = in.nextLine();
+         
+             //Write your code here
+         String regex = "<(.+)>([^<]+)</\\1>";
+        
+         Pattern ptrn=  Pattern.compile(regex,Pattern.CASE_INSENSITIVE);
+          Matcher m=ptrn.matcher(line);
+          int lines=1;
+          while(in.hasNextLine()) {
+        	  lines++;
+        	  
+          }
+          
+          while(lines>0) {
+        	  
+          
+        //  while(m.find()) {
+          if (m.find()) {
+        	  line=m.group(2);
+        	  System.out.println(line);
+          }
+          else 
+         {
+        	System.out.println("None");
+        	 
+         }
+         }
+          //}
+         
+        // testCases--;
+     // }
+   }
+}
+	
+	
+
